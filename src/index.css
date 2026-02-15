@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ⚠️ AGENT MUST REPLACE: These are placeholder colors. You MUST define a custom palette before writing components. */
+    /* The template uses distinctive placeholder colors to force customization - do NOT use these in production! */
+    
+    /* 
+     * EXAMPLE PALETTES (use as inspiration, replace with your own):
+     * 
+     * Modern SaaS (Business/Enterprise):
+     * --primary: 217 91% 60%;        (Blue #2563EB)
+     * --accent: 217 91% 65%;         (Lighter blue #3B82F6)
+     * 
+     * Bold Tech (Startups/Developer Tools):
+     * --primary: 262 83% 58%;        (Purple #8B5CF6)
+     * --accent: 262 83% 68%;         (Lighter purple #A855F7)
+     * 
+     * Quantum Rose (Creative/Design):
+     * --primary: 330 81% 50%;        (Pink #E6067A)
+     * --accent: 330 81% 70%;         (Lighter pink #F472B6)
+     * 
+     * Ocean Depth (Calm/Professional):
+     * --primary: 200 98% 39%;        (Deep teal #0D9488)
+     * --accent: 200 98% 50%;         (Teal #14B8A6)
+     * 
+     * Sunset Warmth (Friendly/Welcoming):
+     * --primary: 24 95% 53%;         (Orange #F97316)
+     * --accent: 24 95% 63%;          (Lighter orange #FB923C)
+     */
+    
+    /* Colors - REPLACE ALL VALUES BELOW with your custom palette */
+    --background: 0 0% 100%;
+    --foreground: 173 80% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 173 80% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 173 80% 10%;
+    
+    --primary: 173 84% 31%; /* #0D9488 */
+    --primary-foreground: 173 84% 95%;
+    
+    --secondary: 173 84% 96%; /* #F0FDFA */
+    --secondary-foreground: 173 84% 20%;
+    
+    --muted: 173 20% 96%;
+    --muted-foreground: 173 20% 40%;
+    
+    --accent: 172 66% 50%; /* #2DD4BF */
+    --accent-foreground: 173 84% 10%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 173 20% 90%;
+    --input: 173 20% 90%;
+    --ring: 173 84% 31%;
+
+    /* Charts - ⚠️ PLACEHOLDER: Replace with your custom chart colors */
+    --chart-1: 280 70% 50%;
+    --chart-2: 300 70% 50%;
+    --chart-3: 320 70% 50%;
+    --chart-4: 340 70% 50%;
+    --chart-5: 0 70% 50%;
+
+    /* Sidebar - ⚠️ PLACEHOLDER: Replace with your custom sidebar colors */
+    --sidebar: 204 93.75% 93.7255%;
+    --sidebar-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-primary: 280 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 60% 60%;
+    --sidebar-accent-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-border: 220 13.0435% 90.9804%;
+    --sidebar-ring: 280 70% 50%;
+
+    /* Fonts */
+    --font-sans: DM Sans, sans-serif;
+    --font-serif: Lora, serif;
+    --font-mono: IBM Plex Mono, monospace;
+
+    /* Shadows */
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+
+    /* Misc */
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+
+    /* Custom tokens for the app */
+    --day-filled: 214 95% 93%; /* Light Blue bg-blue-50 */
+    --day-empty: 210 20% 98%; /* Very Light Gray bg-gray-50 */
+    --day-suggested: 172 66% 50%; /* Accent teal */
+  }
+
+  .dark {
+    /* ⚠️ AGENT MUST REPLACE: Dark mode colors - replace with your custom dark palette */
+    --background: 173 80% 5%;
+    --foreground: 173 20% 95%;
+    
+    --card: 173 80% 8%;
+    --card-foreground: 173 20% 95%;
+    
+    --popover: 173 80% 8%;
+    --popover-foreground: 173 20% 95%;
+    
+    /* ⚠️ PLACEHOLDER: Replace with your custom dark mode primary color */
+    --primary: 173 84% 31%;
+    --primary-foreground: 173 84% 95%;
+    
+    --secondary: 173 80% 12%;
+    --secondary-foreground: 173 20% 95%;
+    
+    --muted: 173 80% 12%;
+    --muted-foreground: 173 20% 60%;
+    
+    --accent: 172 66% 50%;
+    --accent-foreground: 173 80% 5%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 173 80% 15%;
+    --input: 173 80% 15%;
+    --ring: 173 84% 31%;
+
+    /* ⚠️ PLACEHOLDER: Replace with your custom dark mode chart colors */
+    --chart-1: 280 65% 55%;
+    --chart-2: 300 65% 55%;
+    --chart-3: 320 65% 55%;
+    --chart-4: 340 65% 55%;
+    --chart-5: 0 65% 55%;
+
+    /* ⚠️ PLACEHOLDER: Replace with your custom dark mode sidebar colors */
+    --sidebar: 173 80% 8%;
+    --sidebar-foreground: 173 20% 95%;
+    --sidebar-primary: 173 84% 31%;
+    --sidebar-primary-foreground: 173 84% 95%;
+    --sidebar-accent: 172 66% 50%;
+    --sidebar-accent-foreground: 173 80% 5%;
+    --sidebar-border: 173 80% 15%;
+    --sidebar-ring: 173 84% 31%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
